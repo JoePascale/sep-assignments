@@ -29,7 +29,7 @@ class Line
   end
 
   def search(person)
-    person
+    members.include?(person) ? person : nil
   end
 
   private
