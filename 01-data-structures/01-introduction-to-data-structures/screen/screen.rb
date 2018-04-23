@@ -5,11 +5,10 @@ class Screen
   attr_accessor :height
   attr_accessor :matrix
 
-  matrix = []
-
   def initialize(width, height)
     self.width = width
     self.height = height
+    self.matrix = Array.new(height){Array.new(width)}
   end
 
   # Insert a Pixel at x, y

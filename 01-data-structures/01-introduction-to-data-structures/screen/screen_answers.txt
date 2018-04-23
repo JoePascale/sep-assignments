@@ -1,0 +1,6 @@
+1. For the screen assignment, I focused on implementing many declarations of
+self to make accessing any individual attributes easy for others.
+2. Specific elements would be easy to find due to the above.  It is mostly tied
+to methods that can be called because of my initializers that contain references
+to self.
+3. A great example that the screen app could translate to would be a chess board.

@@ -1,0 +1,3 @@
+1. My data structure is based around a simple array where developers can easily access each element like any other array.
+2. A developer could use typical native Array class methods in ruby to access any element.
+3. One could apply this same data structure to an ordered recipe list.  If anyone wanted to make edits to the order or add steps, this app could be used.
