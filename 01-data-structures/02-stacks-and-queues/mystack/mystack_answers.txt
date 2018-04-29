@@ -2,5 +2,5 @@ I struggled a bit with the pop method in this assignment, but ultimately
 figured out that I need to simplify my code.  I originally was focused on the
 pseudo code in the checkpoint & tried to implement the array edits based on
 the index of the item, but realized I really didn't need to worry about that.
-I rather just created a substring for the stack instance each item the pop method
+I rather just created a substring for the stack instance each time the pop method
 was called & it ended up being a fine solution.
