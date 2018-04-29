@@ -1,0 +1,5 @@
+I found this assignment to be pretty straightforward.  I did find myself with a
+large block of code for the enqueue() function, but ended up refactoring quite
+a bit & introducing a ternary operator to test if the queue is empty in the
+middle of the function.  I also created a subarray during the dequeue() function
+since it was a simple way to show that something was removed.
