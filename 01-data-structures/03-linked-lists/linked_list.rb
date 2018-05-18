@@ -35,6 +35,7 @@ class LinkedList
 
   # This method prints out a representation of the list.
   def print
+=begin
     list = []
     current = @head
     while current.next != nil
@@ -42,6 +43,15 @@ class LinkedList
       current = current.next
     end
     list << current
+    list.each do |node|
+      p node.data
+    end
+=end
+    current = @head
+    while current != nil
+      p current.data
+      current = current.next
+    end
   end
 
 
