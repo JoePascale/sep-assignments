@@ -4,7 +4,6 @@ class Node
 
   def initialize(data)
     @data = data
-    #need something like @next = Node.next
     @next
   end
 end
