@@ -1,0 +1,5 @@
+1.  Spacial locality is when you access data elements that are relatively
+close to each other in memory.  It benefits performance because retrieving
+elements that are close to each other requires less time, & hence provides
+faster access with less effort on the part of the computer.
+2. 
