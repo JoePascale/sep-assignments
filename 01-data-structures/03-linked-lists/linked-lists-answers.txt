@@ -2,4 +2,24 @@
 close to each other in memory.  It benefits performance because retrieving
 elements that are close to each other requires less time, & hence provides
 faster access with less effort on the part of the computer.
-2. 
+2. I didn't implement very thorough ways of comparing array vs. linked list
+benchmarks, but I did at least manage to create some data to compare. Results
+are as follows:
+
+          user     system      total        real
+array:  0.000000   0.000000   0.000000 (  0.000041)
+linked list:  0.000000   0.000000   0.000000 (  0.000007)
+
+                user     system      total        real
+check array:  0.000000   0.000000   0.000000 (  0.000010)
+check linked list:  0.000000   0.000000   0.000000 (  0.000528)
+
+                      user     system      total        real
+remove from array:  0.000000   0.000000   0.000000 (  0.000428)
+remove from linked list:  0.000000   0.000000   0.000000 (  0.003842)
+
+
+It seems that arrays are significantly faster in accessing &
+deleting data when it's a very specific element, but not when initializing the
+creation of the data set.  When the search or creation is more linear,
+linked lists seem to shine well.

@@ -4,6 +4,10 @@ class LinkedList
   attr_accessor :head
   attr_accessor :tail
 
+  def initialize(n = nil)
+    self.add_to_tail(n)
+  end
+
   # This method creates a new `Node` using `data`, and inserts it at the end of the list.
   def add_to_tail(node)
     if @head == nil
