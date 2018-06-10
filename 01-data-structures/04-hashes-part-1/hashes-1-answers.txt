@@ -1,0 +1,4 @@
+Doubling the size of an array for hashing purposes seems like a big waste of memory,
+especially when we get into very large data sets. It seems like it would be better
+to figure out a more efficient algorithm for increasing the size of the array without
+requiring doubling the elements every time.
