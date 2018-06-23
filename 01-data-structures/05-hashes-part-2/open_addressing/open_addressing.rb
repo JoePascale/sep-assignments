@@ -2,6 +2,7 @@ require_relative 'node'
 
 class OpenAddressing
   def initialize(size)
+    @items = Array.new(size)
   end
 
   def []=(key, value)
@@ -14,6 +15,7 @@ class OpenAddressing
   # We are hashing based on strings, let's use the ascii value of each string as
   # a starting point.
   def index(key, size)
+    key.sum % size
   end
 
   # Given an index, find the next open index in @items
@@ -22,6 +24,7 @@ class OpenAddressing
 
   # Simple method to return the number of items in the hash
   def size
+    @items.length
   end
 
   # Resize the hash
