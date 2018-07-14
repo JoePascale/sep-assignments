@@ -8,28 +8,27 @@ class SeparateChaining
     @items = Array.new(size)
   end
 
+  #insertion method
   def []=(key, value)
-    #test load factor here
+    self.resize if self.load_factor > @max_load_factor
     address = index(key,@items.size)
     if @items[address] == nil
-      @items[address] = LinkedList.new(Node.new(key,value))
-    #elsif @items[address].key != key
-      #
-    #elsif @items[address].value != value
-      #
+      @items[address] = LinkedList.new
     end
+    @items[address].add_to_tail(Node.new(key,value))
   end
 
+  #lookup method
   def [](key)
     address = index(key,@items.size)
-    if @items[address].head
+    if @items[address] != nil
       while @items[address].head.next
-        #if key at the current link equals key
-          #RETURN this link's value
-          #@head = current.next
-        #end
+        if @items[address].head.key == key
+          @items[address].head.value
+        else
+          @items[address].head = @items[address].head.next
+        end
       end
-
     end
   end
 
@@ -44,11 +43,11 @@ class SeparateChaining
   def load_factor
     load = 0
     @items.each do |list|
-      if list != nil
+      unless list == nil
         load += list.length
       end
     end
-    load / size
+    load / self.size
   end
 
   # Simple method to return the number of items in the hash
@@ -57,6 +56,17 @@ class SeparateChaining
   end
 
   # Resize the hash
+  #calculate the new index
+  #for every element in your old array to put them in the new, larger array
   def resize
+    copy_array = @items
+    @items = Array.new(@items.size*2)
+    copy_array.each do |list|
+      current_node = @head
+      while current_node != nil
+        @items[current_node.key] = current_node.value
+        current_node = current_node.next
+      end
+    end
   end
 end

@@ -6,6 +6,8 @@ class LinkedList
 
   def initialize(n = nil)
     self.add_to_tail(n)
+    @head
+    @tail
   end
 
   # This method creates a new `Node` using `data`, and inserts it at the end of the list.
@@ -40,21 +42,21 @@ class LinkedList
   # This method prints out a representation of the list.
   def print
     current = @head
-    puts current.data
+    puts current
 
     while (current = current.next)
-      puts current.data
+      puts current
     end
   end
 
   def length
     current = @head
-    counter = 1
+    count = 1
     while current.next != nil
-      counter++
+      count += 1
       current = current.next
     end
-    counter
+    count
   end
 
   # This method removes `node` from the list and must keep the rest of the list intact.
