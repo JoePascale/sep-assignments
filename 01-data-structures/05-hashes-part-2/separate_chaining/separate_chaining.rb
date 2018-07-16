@@ -10,12 +10,12 @@ class SeparateChaining
 
   #insertion method
   def []=(key, value)
-    self.resize if self.load_factor > @max_load_factor
     address = index(key,@items.size)
     if @items[address] == nil
       @items[address] = LinkedList.new
     end
     @items[address].add_to_tail(Node.new(key,value))
+    self.resize if self.load_factor > @max_load_factor
   end
 
   #lookup method
@@ -65,11 +65,12 @@ class SeparateChaining
     copy_array = @items
     @items = Array.new(@items.size*2)
     copy_array.each do |list|
-      p list
-      current_node = @head
-      while current_node
-        @items[current_node.key] = current_node.value
-        current_node = current_node.next
+      unless list == nil
+        current_node = list.head
+        while current_node != nil
+          self.[]=(current_node.key,current_node.value)
+          current_node = current_node.next
+        end
       end
     end
   end
