@@ -20,14 +20,13 @@ class SeparateChaining
 
   #lookup method
   def [](key)
-    address = index(key,@items.size)
-    if @items[address] != nil
-      while @items[address].head.next
-        if @items[address].head.key == key
-          @items[address].head.value
-        else
-          @items[address].head = @items[address].head.next
+    current_node = @items[index(key,@items.size)].head
+    if current_node != nil
+      while current_node.next != nil
+        if current_node.key == key
+           return current_node.value
         end
+        current_node = current_node.next
       end
     end
   end
@@ -44,10 +43,14 @@ class SeparateChaining
     load = 0
     @items.each do |list|
       unless list == nil
-        load += list.length
+        current_node = list.head
+        while current_node
+          load += 1
+          current_node = current_node.next
+        end
       end
     end
-    load / self.size
+    load/self.size.to_f
   end
 
   # Simple method to return the number of items in the hash
@@ -62,8 +65,9 @@ class SeparateChaining
     copy_array = @items
     @items = Array.new(@items.size*2)
     copy_array.each do |list|
+      p list
       current_node = @head
-      while current_node != nil
+      while current_node
         @items[current_node.key] = current_node.value
         current_node = current_node.next
       end
