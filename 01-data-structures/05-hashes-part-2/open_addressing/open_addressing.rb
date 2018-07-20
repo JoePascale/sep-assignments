@@ -1,7 +1,7 @@
 require_relative 'node'
 
 class OpenAddressing
-  
+
   def initialize(size)
     @items = Array.new(size)
   end
@@ -9,15 +9,14 @@ class OpenAddressing
   def []=(key, value)
     address = index(key,@items.size)
     while @items[address] != nil
-      address = self.next_open_index
+      address = self.next_open_index(address)
       if @items[address] == @items.last
         self.resize
         address = index(key, @items.size)
         @items[address] = Node.new(key,value)
-        p @items[address]
       end
     end
-    #@items[address] = Node.new(key, value)
+    @items[address] = Node.new(key, value)
   end
 
   def [](key)
@@ -33,11 +32,12 @@ class OpenAddressing
 
   # Given an index, find the next open index in @items
   def next_open_index(index)
-    @items.each do |node|
-      if node != nil
-        node = node.next
-      end
+    next_empty_index = index
+    while @items[next_empty_index] != nil
+      next_empty_index += 1
+      p next_empty_index
     end
+    next_empty_index
   end
 
   # Simple method to return the number of items in the hash

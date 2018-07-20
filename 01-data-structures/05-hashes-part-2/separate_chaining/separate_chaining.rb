@@ -21,13 +21,11 @@ class SeparateChaining
   #lookup method
   def [](key)
     current_node = @items[index(key,@items.size)].head
-    if current_node != nil
-      while current_node.next != nil
-        if current_node.key == key
-           return current_node.value
-        end
-        current_node = current_node.next
+    while current_node
+      if current_node.key == key
+         return current_node.value
       end
+      current_node = current_node.next
     end
   end
 
@@ -68,7 +66,7 @@ class SeparateChaining
       unless list == nil
         current_node = list.head
         while current_node != nil
-          self.[]=(current_node.key,current_node.value)
+          self[current_node.key] = current_node.value
           current_node = current_node.next
         end
       end

@@ -88,6 +88,7 @@ RSpec.describe SeparateChaining, type: Class do
       movies["Return of the Jedi"] = "The Best"
       movies.resize
       expect(movies.size).to eq 12
+      puts "test"
       expect(movies["A New Hope"]).to eq "Average"
       expect(movies["Empire Strikes Back"]).to eq "Excellent"
       expect(movies["Return of the Jedi"]).to eq "The Best"
