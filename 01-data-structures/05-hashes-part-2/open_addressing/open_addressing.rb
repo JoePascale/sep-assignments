@@ -8,19 +8,18 @@ class OpenAddressing
 
   def []=(key, value)
     address = index(key,@items.size)
-    while @items[address] != nil
+    if @items[address] != nil
       address = self.next_open_index(address)
-      if @items[address] == @items.last
+      if address == -1
         self.resize
-        address = index(key, @items.size)
-        @items[address] = Node.new(key,value)
+        address = self.next_open_index(address)
       end
     end
-    @items[address] = Node.new(key, value)
+    @items[address] = Node.new(key,value)
   end
 
   def [](key)
-    @items[index(key,@items.size)]
+    @items[index(key,@items.size)].value
   end
 
   # Returns a unique, deterministically reproducible index into an array
@@ -35,9 +34,12 @@ class OpenAddressing
     next_empty_index = index
     while @items[next_empty_index] != nil
       next_empty_index += 1
-      p next_empty_index
     end
-    next_empty_index
+    if next_empty_index == @items.size
+      -1
+    else
+      next_empty_index
+    end
   end
 
   # Simple method to return the number of items in the hash
