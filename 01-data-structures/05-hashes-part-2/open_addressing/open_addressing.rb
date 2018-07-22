@@ -20,10 +20,13 @@ class OpenAddressing
   end
 
   def [](key)
-    puts @items.size
-    puts index(key, @items.size)
-    puts @items[index(key, @items.size)].value
-    @items[index(key, @items.size)].value
+    address = index(key, @items.length)
+    while address != @items.length
+      if @items[address].key == key
+        return @items[address].value
+      end
+      address += 1
+    end
   end
 
   # Returns a unique, deterministically reproducible index into an array
