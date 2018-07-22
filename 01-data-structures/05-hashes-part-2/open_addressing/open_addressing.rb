@@ -12,6 +12,7 @@ class OpenAddressing
       address = self.next_open_index(address)
       if address == -1
         self.resize
+        address = index(key,@items.size)
         address = self.next_open_index(address)
       end
     end
@@ -19,7 +20,10 @@ class OpenAddressing
   end
 
   def [](key)
-    @items[index(key,@items.size)].value
+    puts @items.size
+    puts index(key, @items.size)
+    puts @items[index(key, @items.size)].value
+    @items[index(key, @items.size)].value
   end
 
   # Returns a unique, deterministically reproducible index into an array
