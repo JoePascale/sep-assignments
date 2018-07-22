@@ -85,4 +85,11 @@ RSpec.describe OpenAddressing, type: Class do
       expect(movies["Return of the Jedi"]).to eq "The Best"
     end
   end
+
+  describe "#print" do
+    it "prints the entire hashclass" do
+      i = star_wars_movies.print
+      expect(i.size).to eq 12
+    end
+  end
 end

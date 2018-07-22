@@ -72,4 +72,10 @@ class SeparateChaining
       end
     end
   end
+
+  def print
+    @items.each do |e|
+      puts e
+    end
+  end
 end
