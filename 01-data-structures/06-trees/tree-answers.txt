@@ -1,0 +1,10 @@
+1.  The average insertion time for a Binary Search Tree is much slower than the average search time in a Heap, in fact typically a small fraction of the time.
+
+2. The Binary Search Tree is much faster at finding 50,000 than the Heap.  The only time a Heap is relatively fast is when it is the largest element in the tree.
+
+3. The average deletion of a Binary Search Tree is also significantly faster than the average deletion of a Heap.
+
+4. It seems that the best use cases of Binary Search Tree are when you are either searching for an item or deleting one.
+
+5. It seems like a Heap's best use case is when you are attempting to insert an element into the tree.
+
