@@ -1,0 +1,34 @@
+1. Eating Schedule
+
+DEF EAT(hunger, free_time)
+	WHILE hunger < 5
+		IF free_time == true
+			EAT.wait
+			time++
+		ELSE IF free_time == false
+			EAT.now
+		END IF
+	END WHILE
+END DEF
+
+2. Purchases
+
+DEF BUY_OR_NOT (wallet, item)
+	WHILE wallet.value < item.value
+		BUY_OR_NOT.work_more
+	ELSE IF wallet.value > item.value
+		BUY_OR_NOT.buy
+	END WHILE
+END DEF
+
+3. Find My Keys
+
+DEF FIND_MY_KEYS (keys_location)
+	locations = [bedroom, bathroom, kitchen, outside, dining]
+	counter = 0
+	WHILE FIND_MY_KEYS.keys_location != locations[counter]
+		counter++
+	ELSE
+		RETURN locations[counter]
+	END WHILE
+END DEF
