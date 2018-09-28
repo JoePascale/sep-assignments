@@ -4,4 +4,8 @@ searches (or loops) to find the actual value when using linear search.
 2. If we were looking for the value G via binary search, it would only take 2
 searches to identify it's location in the data set.
 
+<<<<<<< HEAD
 3. fib(10) = 55; fib (11) = 89; fib(12) = 144
+=======
+3. 
+>>>>>>> algorithms-intro
