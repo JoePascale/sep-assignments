@@ -5,3 +5,15 @@ searches (or loops) to find the actual value when using linear search.
 searches to identify it's location in the data set.
 
 3. fib(10) = 55; fib (11) = 89; fib(12) = 144
+
+4. If the array is unsorted, I would definitely choose a linear search algorithm
+over a binary one, & implement it iteratively.  The reason is that an unsorted
+array is likely to be able to sort in order more quickly, rather than creating
+unnecessarily long search iterations, plus the iterative manner means the function
+only needs to be called once.
+
+5. If the array is sorted, I would use a binary search algorithm instead of
+linear, since the task would be much easier/faster to implement.  & although
+there really isn't much difference between speed of iterative vs. recursive in
+this case, iterative does typically use less memory so it would be wise to
+implement that way.
