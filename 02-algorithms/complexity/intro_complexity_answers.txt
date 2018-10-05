@@ -1,0 +1,14 @@
+1. Speed-wise, an algorithm that has O(1) efficiency is a Ferrari whereas an
+algorithm that has an efficiency of O(2^n) is a Prius.
+
+2. The best-case scenario for binary search would be O(1) or constant time,
+but it would take some great guessing to accomplish.
+
+3. The worst-case scenario for binary search would be O(log n) or
+logarithmic time, which is still relatively quick.
+
+4. The average-case scenario for binary search would also be O(log n),
+since the nature of the search is still based on halving the data set at
+each iteration.
+
+5. 
