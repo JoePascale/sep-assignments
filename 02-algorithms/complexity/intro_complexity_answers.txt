@@ -11,4 +11,20 @@ logarithmic time, which is still relatively quick.
 since the nature of the search is still based on halving the data set at
 each iteration.
 
-5. 
+5. done
+
+6. infinity
+
+7. O(log n) or logarithmic
+
+8. Done. Worst-case number of iterations will always be equal to n in this
+scenario.
+
+9. Pertaining to the graph, worst-case of this table is O(n) or linear
+complexity.
+
+10. Big-O of binary search is O(log n).
+
+11. Big-Omega of binary search is O(1).
+
+12. Big-Theta of binary search is O(log n).
