@@ -1,0 +1,28 @@
+1. O(1) or constant time, because no matter how many times we execute the
+function, it will always take the same time to complete.
+
+2. O(n) or linear time, because there is a linear iteration plus a constant,
+but in notating algorithm complexity, we always take the larger complexity of
+the two.
+
+3. My initial reaction was that this algorithm has a complexity of
+O(n log n) because there is an outer loop plus an inner loop that decreases in
+size, but I believe that is incorrect because the inner loop does not
+decrease in size by half like a binary search typically does. The complexity
+is actually O(n^2) & I believe the reason why is because the inner loop only
+decrements by 1 element, meaning that for each outer loop iteration of the
+collection, there is an entirely new iteration of the subcollection, but that
+subcollection only decreases in size very slowly.
+
+4. This algorithm complexity is O(n) or linear. The first few lines are
+constant & the recursive call is linear because it slowly decrements the
+collection.  Since we remove the subtraction operator in O-notations, there is
+no need to refer to the O(n-1) & we can simplify to O(n).
+
+5. This algorithm is linear or O(n), because it executes n-1 times (note the
+line at the end of the while loop that indicates an incrementing of i during
+each execution).
+
+6. This algorithm is O(n log n) because it's a sort.  There are elements of
+linear search, recursive calls, & a decreasing (by half) sub-collection search
+with every iteration.
