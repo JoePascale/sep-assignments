@@ -1,14 +1,14 @@
 #!/Users/joepascale/.rvm/rubies/ruby-2.4.0/bin/ruby -w
 
 def fib(n)
- first = 0
- second = 1
- (0..n-1).each do
+  first = 0
+  second = 1
+  n.times do
    temp = first
    first = second
    second = temp + second
- end
- second
+  end
+  first
 end
 
 puts fib(0)
