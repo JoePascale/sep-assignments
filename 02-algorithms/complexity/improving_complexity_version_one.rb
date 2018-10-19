@@ -1,32 +1,34 @@
-# This method takes n arrays as input and combine them in sorted ascending  order
 def improving_complexity_v1(*arrays)
-  #steps:
-  #create empty array
-  #combine arrays passed in
-  #push sorted values to new empty array
   combined_array = []
   arrays.each do |array|
-    array.each do |value|
-      combined_array << value
-    end
+    #removed extraneous loop to combine arrays
+    #added combine assignment operator to append arrays
+    combined_array += array
   end
 
-  sorted_array = [combined_array.delete_at(combined_array.length-1)]
+  #removed sorted_array length logic & declared as empty array
+  sorted_array = []
 
-  for val in combined_array
+  #this block needs updating, nested loop, compare all values to i, sort based on that
+
+  #SHOULD I DO INSERTION SORT OR QUICKSORT??  I THINK DO INSERTION SORT FIRST,
+  #THEN REFACTOR IN VERSION 2 TO A MERGE SORT, refer to this insertion sort:
+  #https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/sorting.html
+
+  #removed for loop & added each loop, it would've returned original collection if not
+  combined_array.each do |e|
     i = 0
     while i < sorted_array.length
-      if val <= sorted_array[i]
+      if e < sorted_array[i]
         sorted_array.insert(i, val)
-        break
+        #removed break
       elsif i == sorted_array.length - 1
-        sorted_array << val
-        break
+        sorted_array << e
+        #removed break
       end
       i+=1
     end
   end
 
-  # Return the sorted array
   sorted_array
 end
